@@ -12,7 +12,7 @@ import mvn.util.LinkerSymbolTable;
  * - cada arquivo apresenta uma e apenas uma origem relocável;
  * - os conflitos de código absoluto não são verificados;
  * @author FLevy
- * @version 23.10.2006 
+ * @version 23.10.2006
  * Preparação do arquivo para alunos - PSMuniz 1.11.2006
  * @version 01.01.2010 : atualização da classe de acordo com a definição dos slides (Tiago)
  */
@@ -50,7 +50,12 @@ public class Pass1 extends Pass {
          * Analisar o nibble e incrementar o endereçamento relativo (relativeLocationCounter) de acordo.
          *
          */
-        return false;
+         if (isRelocableEntryPoint(nibble) == true) {
+           this.relativeLocationCounter += 2;
+           return true;
+         }
+
+         return false
     }//
 
     /**
@@ -88,6 +93,10 @@ public class Pass1 extends Pass {
          * Atualizar as variáveis existentes de acordo.
          *
          * */
+
+         this.base += relativeLocationCouter;
+         this.relativeLocationCouter = 0;
+         this.externalCounter = 0;
     }//
 
     public LinkerSymbolTable getSymbolTable() {
