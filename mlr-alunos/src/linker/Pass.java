@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 /**
  * Representa um passo do ligador.
- * 
+ *
  * @author FLevy
  * @version 23.10.2006
  * @version 01.11.2010 : Alterações na lógica do nibble de acordo com os slides (Tiago)
@@ -69,6 +69,9 @@ public abstract class Pass {
      */
     protected boolean isEntryPoint(int nibble) {
         // TODO: isEntryPoint
+        if (nibble == 2 || nibble == 0) {
+          return true;
+        }
         return false;
     }
 
@@ -82,6 +85,9 @@ public abstract class Pass {
      */
     protected boolean isRelocableEntryPoint(int nibble) {
         //TODO: isRelocableEntryPoint
+        if (((nibble/pow(2,3))%2) != 0) {
+          return true;
+        }
         return false;
     }
 
@@ -95,6 +101,9 @@ public abstract class Pass {
      */
     protected boolean isRelocable(int nibble) {
         //TODO: isRelocable
+        if ((nibble/2)%2 != 0) {
+          return true;
+        }
         return false;
     }
 
@@ -108,7 +117,10 @@ public abstract class Pass {
      */
     protected boolean isResolved(int nibble) {
         //TODO: isResolved
-        return false;
+        if (nibble != 4) {
+          return false;
+        }
+        return true;
     }
 
     /**
