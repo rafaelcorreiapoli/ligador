@@ -48,6 +48,49 @@ public class Pass2 extends Pass {
      */
     protected boolean processCode(int nibble, String address, String code, String currentFile)
             throws IOException {
+
+        int inteiro1 = Integer.parseInt(address, 16);
+        String string1 = code;
+        boolean bool1 = false;
+        if(isArgumentRelocable(nibble)) {
+            bool1 = true;
+        }
+
+        boolean bool2 = false;
+        if(isRelocable(nibble)) {
+            inteiro1 += this.base;
+            bool2 = true;
+            this.relativeLocationCouter += 2;
+        }
+
+        int inteiro2 = Integer.parseInt(code.substring(1), 16);
+        String string2 = this.symbolTable.getSymbol(currentFile, inteiro2);
+        boolean bool3 = true;
+        if(string2 != null && string2.startsWith("5") && (nibble == 5 || nibble == 13)) {
+            bool3 = false;
+        }
+
+        if((string2 = (string2 = "0000" + string2).substring(string2.length() - 3, string2.length())) != null) {
+            if(nibble % 2 == 1) {
+                LinkerSymbolTable tabela;
+                bool1 = (tabela = this.symbolTable).isRelocable(tabela.getAddressByCode(currentFile, inteiro2));
+                string1 = code.substring(0, 1) + string2;
+            }
+
+            if((nibble >> 2) % 2 != 0) {
+                string1 = code.substring(0, 1) + string2;
+            }
+        } else if(nibble % 2 == 1) {
+            string1 = code;
+        }
+
+        if(isArgumentRelocable(nibble)) {
+            nibble = Integer.parseInt(string1, 16) + this.d;
+            string1 = (string1 = "0000" + Integer.toHexString(nibble)).substring(string1.length() - 4, string1.length());
+        }
+
+        this.out.write(inteiro1, string1, bool2, bool1, bool3);
+        return true;
        /*
          * TODO: processCode
          *
@@ -57,7 +100,6 @@ public class Pass2 extends Pass {
          * O código resolvido deve ser enviado para a saída.
          *
          */
-        return false;
     }
 
     protected boolean processSymbolicalAddress(int nibble, String address, String symbol, String currentFile, String originalLine)

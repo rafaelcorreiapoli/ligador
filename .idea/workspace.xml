@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06c9564c-8836-4c58-9beb-cb9de14e9303" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java" afterPath="$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java" afterPath="$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java" />
     </list>
     <ignored path="ligador.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +22,7 @@
     <favorites_list name="ligador" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="MvnLinker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/MvnLinker.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -34,36 +33,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pass1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java">
+      <file leaf-file-name="e.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mlr/linker/e.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27586207">
-              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+            <state vertical-scroll-proportion="-3.2857144">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="d.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mlr/linker/d.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2857144">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#1235#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pass2.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Pass2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.6551724">
+              <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,6 +67,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java" />
+        <option value="$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java" />
       </list>
     </option>
   </component>
@@ -93,8 +79,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="198" />
-    <option name="y" value="80" />
+    <option name="x" value="111" />
+    <option name="y" value="52" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -123,8 +109,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -172,21 +158,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mlr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ligador" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ligador" />
+              <option name="myItemId" value="mlr-alunos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mlr" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -473,7 +449,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="198" y="80" width="1400" height="1000" extended-state="0" />
+    <frame x="111" y="52" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -515,6 +491,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/MvnLinker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlr/linker/d.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.43103448">
@@ -532,23 +540,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mlr/linker/f.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8883611">
           <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#3561#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -556,9 +552,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28503564">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#3540#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,28 +564,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlr/linker/e.class">
+    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="104" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mlr/linker/d.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2857144">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#1235#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-10.178572">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass1.java">
+    <entry file="file://$PROJECT_DIR$/mlr/linker/e.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27586207">
-          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        <state vertical-scroll-proportion="-3.2857144">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlr-alunos/src/linker/Pass2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6551724">
+          <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
           <folding />
         </state>
       </provider>
