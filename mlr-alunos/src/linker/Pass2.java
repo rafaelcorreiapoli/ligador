@@ -36,7 +36,7 @@ public class Pass2 extends Pass {
         base = 0;
     }
 
-    /**
+    /**  NADDR CODE
      * Processa uma linha de código.
      *
      * @param nibble O nibble do endereço da linha.
@@ -48,7 +48,7 @@ public class Pass2 extends Pass {
      */
     protected boolean processCode(int nibble, String address, String code, String currentFile)
             throws IOException {
-        /*
+       /*
          * TODO: processCode
          *
          * Aqui, deve-se gerar o código objeto a partir da tabela de simbolos (ST).
@@ -57,10 +57,8 @@ public class Pass2 extends Pass {
          * O código resolvido deve ser enviado para a saída.
          *
          */
-
         return false;
-
-    }//method
+    }
 
     protected boolean processSymbolicalAddress(int nibble, String address, String symbol, String currentFile, String originalLine)
             throws IOException {
@@ -78,7 +76,23 @@ public class Pass2 extends Pass {
         //Se for símbolo exportável: gero no arquivo de saída as informações a respeito dele
         //...
         //...
-        return false;
+
+        if(isEntryPoint(nibble)){
+            this.out.writeExternal(Integer.toHexString(nibble), Integer.parseInt(this.symbolTable.getSymbolValue(symbol), 16), originalLine);
+        } else {
+            if(!this.symbolTable.symbolInTable(symbol)) {
+                this.symbolTable.definedSymbol(symbol);
+                String local = "0000" + Integer.toHexString(this.base);
+                local = "5" + local.substring(local.length() - 3, local.length());
+                this.symbolTable.setSymbolValue(symbol,local);
+                this.out.writeExternal("4", Integer.parseInt(this.symbolTable.getSymbolValue(symbol), 16), originalLine);
+                ++this.externalCounter;
+            }
+
+            StringTokenizer palavra = new StringTokenizer(originalLine);
+            this.symbolTable.setCodeForSymbol(symbol, currentFile, Integer.parseInt(palavra.nextToken().substring(1, 4), 16));
+        }
+        return true;
     }
 
     /**

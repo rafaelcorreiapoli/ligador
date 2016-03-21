@@ -94,7 +94,7 @@ public class Converter {
      * Grava o bloco de informação no arquivo de saída, convertendo o buffer para o formato desejado
      * e calculando o checksum ( endereço inicial + tamanho do bloco + INFO ).
      *
-     * @param address o endereço inicial do bloco
+     * @param addr o endereço inicial do bloco
      * @param block uma lista contendo as Words a serem gravadas no arquivo de saida.
      *
      * */

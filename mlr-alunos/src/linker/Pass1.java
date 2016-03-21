@@ -43,21 +43,25 @@ public class Pass1 extends Pass {
      * @return Verdadeiro caso a análise teve sucesso, falso caso contrário.
      * @exception Caso tenha ocorrido algum problema de IO.
      */
-    protected boolean processCode(int nibble, String address, String code, String currentFile){
+    protected boolean processCode(int nibble, String address, String code, String currentFile) throws  IOException{
         /**
          * TODO: processCode
          *
          * Analisar o nibble e incrementar o endereçamento relativo (relativeLocationCounter) de acordo.
          *
          */
+
         try {
-             if (isRelocableEntryPoint(nibble) == true) {
-               this.relativeLocationCounter += 2;
-               return true;
-             }
-            catch (IOException e) {
+            if (isRelocable(nibble)) {
+                this.relativeLocationCouter += 2;
+            } else {
+                throw new IOException("Erro");
             }
-            return false;
+            return true;
+        } catch (IOException e) {
+            throw e;
+        }
+
     }//
 
     /**
