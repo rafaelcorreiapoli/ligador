@@ -50,12 +50,14 @@ public class Pass1 extends Pass {
          * Analisar o nibble e incrementar o endereçamento relativo (relativeLocationCounter) de acordo.
          *
          */
-         if (isRelocableEntryPoint(nibble) == true) {
-           this.relativeLocationCounter += 2;
-           return true;
-         }
-
-         return false
+        try {
+             if (isRelocableEntryPoint(nibble) == true) {
+               this.relativeLocationCounter += 2;
+               return true;
+             }
+            catch (IOException e) {
+            }
+            return false;
     }//
 
     /**
@@ -72,14 +74,32 @@ public class Pass1 extends Pass {
     protected boolean processSymbolicalAddress(int nibble, String address, String symbol, String currentFile, String originalLine)
             throws IOException {
         /*
+
          * TODO: processSymbolicalAddress
          * Situações típicas: entry point relocável, entry point absoluto e external.
          * O objetivo é resolver os entry points e externals relativos.
          * Devem ser avaliadas as combinações apropriadas do nibble.
          * Deve-se calcular o endereço do codigo e atualizar apropriadamente a tabela de simbolos.
          */
+        if(isRelocableEntryPoint(nibble) == true) {
+            this.symbolTable.getSymbolValue(symbol);
+            String new_address = Integer.toHexString(Integer.parseInt(address,16) + this.base);
+            this.symbolTable.setSymbolValue(symbol,new_address,true);
+        }
+        else if(isEntryPoint(nibble) == true) {
+            this.symbolTable.getSymbolValue(symbol);
+            this.symbolTable.setSymbolValue(symbol,address);
+        }
+        else {
+            if(isExternalPseudoInstruction(nibble) == false) {
+                return false;
+            }
 
-        return false;
+            this.symbolTable.setCodeForSymbol(symbol,address,this.base);
+            ++this.base;
+        }
+        return true;
+
     }//
 
     /**
