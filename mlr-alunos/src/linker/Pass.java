@@ -57,7 +57,7 @@ public abstract class Pass {
     protected abstract void fileEnd();
 
     /**
-     *
+     * [X] CHECK
      * Verifica se é entry-point a partir do nibble. <br />
      * Tanto no caso de pseudo-instrução quanto no caso de instrução
      * uma EntryPoint é indicada pelo segundo bit do Nibble.
@@ -75,7 +75,7 @@ public abstract class Pass {
         return false;
     }
 
-    /**
+    /** [x] check
      * Verifica se é um entry-point relocável a partir do nibble. <br />
      *
      * <b>Nibble: 0010</b>
@@ -84,14 +84,10 @@ public abstract class Pass {
      * @return Verdadeiro caso for entry-point relocável e falso caso contrário.
      */
     protected boolean isRelocableEntryPoint(int nibble) {
-        //TODO: isRelocableEntryPoint
-        if (((nibble/pow(2,3))%2) != 0) {
-          return true;
-        }
-        return false;
+        return (nibble == 2);
     }
 
-    /**
+    /** [x] check
      * Verifica se o nibble representa um endereço relocável. <br />
      *
      * <b>Nibble: 1XXX</b>
@@ -100,38 +96,30 @@ public abstract class Pass {
      * @return Verdadeiro se o endereço for relocável.
      */
     protected boolean isRelocable(int nibble) {
-        //TODO: isRelocable
-        if ((nibble/2)%2 != 0) {
-          return true;
-        }
-        return false;
+        return (nibble / Math.pow(2, 3)) % 2 > 0;
     }
 
-    /**
+    /** [x] CHECK
      * Verifica se o nibble representa um argumento com endereco resolvido. <br />
      *
-     * Nibble: 
+     * Nibble: X0XX
      *
      * @param nibble  O nibble a ser verificado.
      * @return Verdadeiro se o endereço for resolvido.
      */
     protected boolean isResolved(int nibble) {
-        if (nibble != 4) {
-          return false;
-        }
-        return true;
+        return (nibble / Math.pow(2, 2)) % 2 == 0;
     }
 
-    /**
+    /** [x] check
      * Verifica se o nibble representa um argumento relocável.
-     *
+     * Nibble: XX1X
      * @param nibble
      *            O nibble a ser verificado.
      * @return Verdadeiro se o argumento for relocável.
      */
     protected boolean isArgumentRelocable(int nibble) {
-        //
-        // return isRelocable(nibble);
+        return (nibble / Math.pow(2, 1) % 2 != 0);
     }
 
     /**
@@ -144,7 +132,7 @@ public abstract class Pass {
      */
     protected boolean isExternalPseudoInstruction(int nibble) {
         //TODO: isExternalPseudoInstruction
-        return (nibble / Math.pow(2, 2) % 2 > 0);
+        return (nibble == 4);
     }//
 
 
@@ -157,7 +145,7 @@ public abstract class Pass {
      */
     protected boolean instructionWithExternal(int nibble) {
         //TODO: instructionWithExternal
-        return (nibble / Math.pow(2, 4) % 2 > 0);
+        return (nibble % 2 != 0);
     }//
 
     /**
