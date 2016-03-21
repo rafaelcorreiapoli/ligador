@@ -64,15 +64,15 @@ public class Pass2 extends Pass {
 
     protected boolean processSymbolicalAddress(int nibble, String address, String symbol, String currentFile, String originalLine)
             throws IOException {
-        
+
         /**
          * TODO: processSymbolicalAddress
-         * Tratamento do Endereçamento simbólico. 
+         * Tratamento do Endereçamento simbólico.
          * Caso EntryPoint: escreve no arquivo de saída
          * Caso External: se resolvido ignora, caso contrário insere na tabela o arquivo com um novo endereçamento "virtual"
          *                  e escreve o external no arquivo de saída.
-         * 
-         *          
+         *
+         *
          */
 
         //Se for símbolo exportável: gero no arquivo de saída as informações a respeito dele
@@ -89,6 +89,8 @@ public class Pass2 extends Pass {
          * TODO: fileEnd()
          * Quando há mudança de arquivo, deve-se atualizar a base e o relativeLocationCounter!
          * */
+         this.base += relativeLocationCouter;
+         this.relativeLocationCouter = 0;
     }
 
     public void closeOutput() throws IOException {
