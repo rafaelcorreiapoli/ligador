@@ -116,7 +116,6 @@ public abstract class Pass {
      * @return Verdadeiro se o endereço for resolvido.
      */
     protected boolean isResolved(int nibble) {
-        //TODO: isResolved
         if (nibble != 4) {
           return false;
         }
@@ -131,7 +130,8 @@ public abstract class Pass {
      * @return Verdadeiro se o argumento for relocável.
      */
     protected boolean isArgumentRelocable(int nibble) {
-        return false;
+        //
+        // return isRelocable(nibble);
     }
 
     /**
@@ -144,8 +144,9 @@ public abstract class Pass {
      */
     protected boolean isExternalPseudoInstruction(int nibble) {
         //TODO: isExternalPseudoInstruction
-        return false;
+        return (nibble / Math.pow(2, 2) % 2 > 0);
     }//
+
 
     /**
      *
@@ -156,7 +157,7 @@ public abstract class Pass {
      */
     protected boolean instructionWithExternal(int nibble) {
         //TODO: instructionWithExternal
-        return false;
+        return (nibble / Math.pow(2, 4) % 2 > 0);
     }//
 
     /**
